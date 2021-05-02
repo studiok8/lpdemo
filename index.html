@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Power Stone</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+	<script>
+        $(function(){
+		/* 開ける */
+		$('.btn-trigger').click(function(){
+					$("header").toggleClass('open');
+			$("menu").slideToggle(500);
+				});
+	    /* 閉める */
+	    $('menu a').on('click', function(){
+	        if (window.innerWidth <= 2400) {
+	            $('.btn-trigger').click();
+	        }
+	    });
+		});
+
+	$(function(){
+  $('a[href^="#"]').click(function(){
+    var speed = 500;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+});
+
+$(function(){
+  $('.btn-trigger').on('click', function() {
+    $(this).toggleClass('active');
+    return false;
+  });
+});
+	</script>
+
+</head>
+<body>
+   <header>
+    <h1>Power Stone</h1>
+    <div>
+            <div class="btn-trigger" id="btn1">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        <div id="navi">
+            <a class="btn" href="https://www.photostudio-k.com/">詳しく見る</a>
+        </div>
+        <menu>
+            <ul>
+                <li><a href="#content00">concept</a></li>
+                <li><a href="#content01">サンプル</a></li>
+                <li><a href="#content02">商品紹介</a></li>
+                <li><a href="#content03">会社概要</a></li>
+            </ul>
+        </menu>
+    </div>
+   </header> 
+
+   <main>
+    <div class="nav">
+    <div class="parallax-bg img-bg-01" width="100vw" height="auto">
+        <h2>パワーストーン</h2>
+            <p>999999999999<br>999999999999</p>
+            <p>888888888888<br>888888888888</p>
+            <p>777777777777<br>777777777777</p>
+        </div>
+    <div class="iyasi img-bg-02" width="100vw" height="auto">
+        <h2>効果</h2>
+            <p>pppppppppppp<br>ppppppppppp</p>
+            <p>oooooooooooo<br>ooooooooooo</p>
+            <p>kkkkkkkkkkkk<br>kkkkkkkkkkk</p>
+        </div>
+    </div>
+   </main>
+   <footer>
+    <ul class="footer-menu">
+        <li>HOME ｜</li>
+        <li>利用規約 ｜</li>
+        <li>サイトマップ ｜</li>
+        <li>お問い合わせ</li>
+       </ul>
+    <small>&copy;2020 STUDIO-K All rights reserved.</small>
+   </footer>
+</body>
+</html>
